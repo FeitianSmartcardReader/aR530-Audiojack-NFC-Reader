@@ -1,2 +1,2 @@
-# ccid-mac-os-x-yosemite
-Support Feitain R502 dual interface reader
+# Put Feitain Audiojack NFC reader SDK into here
+
