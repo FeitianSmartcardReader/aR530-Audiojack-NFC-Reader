@@ -1,0 +1,5 @@
+2015/4/16
+	Add Get smartcard reader UID API
+2015/02/06
+	Add support for HTC One S/Z560E and X720D.onex
+	The max input data length is 255 bytes

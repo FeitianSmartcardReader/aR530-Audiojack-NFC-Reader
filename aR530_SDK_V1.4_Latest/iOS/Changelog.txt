@@ -1,0 +1,6 @@
+2015/04/16
+	1. Add a API to read UID
+2015/02/06
+	1. The max of input data length is 255 bytes
+	2. When connect to NFC card, get ATQA and ATQB, SAK infomation and display
+	3. Improve UI

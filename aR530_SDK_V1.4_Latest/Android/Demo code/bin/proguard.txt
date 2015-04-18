@@ -1,0 +1,15 @@
+# view AndroidManifest.xml #generated:40
+-keep class com.ft.mobile.reader.test.M1Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:45
+-keep class com.ft.mobile.reader.test.M1BinaryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:50
+-keep class com.ft.mobile.reader.test.M1ValueActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:28
+-keep class com.ft.mobile.reader.test.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:18
+-keep class com.ft.mobile.reader.test.TestParamActivity { <init>(...); }
+

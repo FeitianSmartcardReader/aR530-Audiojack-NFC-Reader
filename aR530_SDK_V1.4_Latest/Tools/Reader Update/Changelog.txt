@@ -1,0 +1,2 @@
+1.21.0
+	Add read UID function in firmware,now customer can through Android and iOS SDK to read UID
