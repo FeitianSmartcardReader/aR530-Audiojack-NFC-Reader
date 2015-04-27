@@ -27,6 +27,8 @@ import android.widget.TextView;
 import com.ft.mobile.reader.Card;
 import com.ft.mobile.reader.Convert;
 
+import ft.mobile.bank.utils.Convection;
+
 public class MainActivity extends Activity implements OnClickListener,
 		OnItemSelectedListener {
 
@@ -288,7 +290,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * Get Device ID
+	 * 获取设备ID
 	 */
 	class GetDeviceIDTask extends AsyncTask<Void, Void, String> {
 
@@ -309,7 +311,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 	
 	/**
-	 * Get Device UID(user ID)
+	 * 获取设备UID
 	 */
 	class GetDevUIDTask extends AsyncTask<Void, Void, String> {
 
@@ -330,7 +332,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * Get Firmware version
+	 * 获取固件版本号
 	 */
 	class GetFirmwareVersionTask extends AsyncTask<Void, Void, String> {
 
@@ -351,7 +353,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * Searching card
+	 * 寻卡
 	 */
 	class ConnectTask extends AsyncTask<Void, Void, Integer> {
 
@@ -488,7 +490,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * Disconnect
+	 * 断开连接
 	 */
 	class DisconnectTask extends AsyncTask<Void, Void, String> {
 
@@ -528,7 +530,10 @@ public class MainActivity extends Activity implements OnClickListener,
 
 		@Override
 		protected String doInBackground(byte[]... sendData) {
-			return myCard.FTNFC_transmitCmd(sendData[0]);
+			byte respData[] = new byte[1024];
+			int recvLen = myCard.FTNFC_transmitCmd(sendData[0],  respData);
+			return "Response:\n" + Convection.Bytes2HexString(respData, recvLen);
+//			return myCard.FTNFC_transmitCmd(sendData[0]);
 
 		}
 

@@ -1,3 +1,7 @@
+2015/4/27
+	Removed chinese words in UI
+	Removed response string ¡°Response:\n¡±
+	return data type change to byte array, the before version was returned hex string
 2015/4/16
 	Add Get smartcard reader UID API
 2015/02/06
