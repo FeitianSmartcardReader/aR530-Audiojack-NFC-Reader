@@ -290,7 +290,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * 获取设备ID
+	 * Get Device ID
 	 */
 	class GetDeviceIDTask extends AsyncTask<Void, Void, String> {
 
@@ -311,7 +311,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 	
 	/**
-	 * 获取设备UID
+	 * Get reader UID(user ID)
 	 */
 	class GetDevUIDTask extends AsyncTask<Void, Void, String> {
 
@@ -332,7 +332,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * 获取固件版本号
+	 * Get firmware version
 	 */
 	class GetFirmwareVersionTask extends AsyncTask<Void, Void, String> {
 
@@ -353,7 +353,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * 寻卡
+	 * Searching card
 	 */
 	class ConnectTask extends AsyncTask<Void, Void, Integer> {
 
@@ -490,7 +490,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * 断开连接
+	 * Disconnect 
 	 */
 	class DisconnectTask extends AsyncTask<Void, Void, String> {
 
