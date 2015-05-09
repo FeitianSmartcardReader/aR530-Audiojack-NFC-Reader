@@ -1,3 +1,5 @@
+2015/5/8
+	Update Android SDK, fixed bugs
 2015/4/16
 	Add Get UID(User ID) API into android and iOS SDK
 2015/02/06
