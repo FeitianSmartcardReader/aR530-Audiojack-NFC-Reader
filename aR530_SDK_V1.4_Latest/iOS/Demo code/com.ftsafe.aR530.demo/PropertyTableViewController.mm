@@ -167,7 +167,7 @@ UIViewController * tempVC = nil ;
     char IDm[16 + 1] = {0};
     char PMm[16 + 1] = {0};
     char pupi[64] = {0};
-    char atqa[4+1] = {0} ;
+//    char atqa[4+1] = {0} ;
     
     
     HexToStr(uid, cardHandle->uid, cardHandle->uidLen);
@@ -224,7 +224,7 @@ UIViewController * tempVC = nil ;
     else if(cardHandle->type == CARD_TYPE_D) {                  // Topaz
         
         HexToStr(pupi, cardHandle->PUPI, cardHandle->PUPILen);
-        MsgShowing = [NSString stringWithFormat:@"Card Type:Topaz\nATQA:%02x ID1z:%s", cardHandle->ATQA, pupi];
+        MsgShowing = [NSString stringWithFormat:@"Card Type:Topaz\nATQA:%2s ID1z:%s", cardHandle->ATQA, pupi];
         [self showMsg:MsgShowing returnAfterShow:NO];
     }
     else{
