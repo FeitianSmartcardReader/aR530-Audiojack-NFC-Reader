@@ -133,6 +133,7 @@
 		89773C2D1A5E656C005B9B45 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				B50D04201BB3FC3200B1EDB3 /* ExternalAccessory.framework */,
 				B50D04221BB3FE2500B1EDB3 /* libFTaR530_all.a */,
 				898E35731A5A71E6006AE9DD /* AVFoundation.framework */,
 				898E355B1A5A6BE0006AE9DD /* UIKit.framework */,
@@ -170,7 +171,6 @@
 		89CC20921A496AAC004944F3 = {
 			isa = PBXGroup;
 			children = (
-				B50D04201BB3FC3200B1EDB3 /* ExternalAccessory.framework */,
 				89CC209D1A496AAC004944F3 /* com.ftsafe.aR530.demo */,
 				89773C2D1A5E656C005B9B45 /* framework */,
 				89CC209C1A496AAC004944F3 /* Products */,
@@ -478,8 +478,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = com.ftsafe.aR530.demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
