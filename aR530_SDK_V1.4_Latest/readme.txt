@@ -1,3 +1,5 @@
+2016/01/26
+	Update iOS SDK, Add API control buzzer
 2015/5/8
 	Update Android SDK, fixed bugs
 2015/4/16

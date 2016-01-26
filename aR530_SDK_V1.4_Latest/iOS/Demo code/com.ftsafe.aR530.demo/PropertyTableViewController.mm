@@ -128,6 +128,12 @@ UIViewController * tempVC = nil ;
     [_ar530 NFC_Card_Open:self];
     
 }
+- (IBAction)PlaySound:(UIButton *)sender {
+    [_ar530 playSound:self ];
+}
+- (IBAction)CloseSound:(UIButton *)sender {
+    [_ar530 disabbleConnectSound:self];
+}
 
 
 - (void)aquireFirmwareVersion

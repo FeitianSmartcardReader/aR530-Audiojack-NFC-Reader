@@ -70,6 +70,19 @@
  */
 - (void)getFirmwareVersion:(id<FTaR530Delegate>)delegate;
 
+/*!
+ @method playSound:
+ @abstract Play a sound
+ @param delegate IN:(id<FTaR530Delegate>)
+  */
+- (void)playSound:(id<FTaR530Delegate>)delegate;
+
+/*!
+ @method disabbleConnectSound:
+ @abstract disabble connect sound
+ @param delegate IN:(id<FTaR530Delegate>)
+ */
+- (void)disabbleConnectSound:(id<FTaR530Delegate>)delegate;
 //---------------------------newly added methods end-------------------------------
 
 //----------------------------aR530 CardReader Methods------------------------------

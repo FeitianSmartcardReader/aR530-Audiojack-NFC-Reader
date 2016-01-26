@@ -51,25 +51,38 @@
 - (NSString*)getLibVersion;
 
 //-----------------------------newly added methods---------------------------------
-/*@Name:        +(void)aR530_GetDeviceID:(id<FTaR530Delegate>)delegate;
+/*@Name:        +(void)aR520_GetDeviceID:(id<FTaR530Delegate>)delegate;
  *@Function:    Get device ID
  *@Parameter:   IN:(id<FTaR530Delegate>)delegate:
  */
 - (void)getDeviceID:(id<FTaR530Delegate>)delegate;
 
 //-----------------------------newly added methods---------------------------------
-/*@Name:        +(void)aR530_GetDeviceUID:(id<FTaR530Delegate>)delegate;
+/*@Name:        +(void)aR520_GetDeviceUID:(id<FTaR530Delegate>)delegate;
  *@Function:    Get device UID
  *@Parameter:   IN:(id<FTaR530Delegate>)delegate:
  */
 - (void)getDeviceUID:(id<FTaR530Delegate>)delegate;
 
-/*@Name:        +(void)aR530_GetFirmwareVersion:(id<FTaR530Delegate>)delegate;
+/*@Name:        +(void)aR520_GetFirmwareVersion:(id<FTaR530Delegate>)delegate;
  *@Function:    Get firmware version
  *@Parameter:   IN:(id<FTaR530Delegate>)delegate:
  */
 - (void)getFirmwareVersion:(id<FTaR530Delegate>)delegate;
 
+/*!
+ @method playSound:
+ @abstract Play a sound
+ @param delegate IN:(id<FTaR530Delegate>)
+  */
+- (void)playSound:(id<FTaR530Delegate>)delegate;
+
+/*!
+ @method disabbleConnectSound:
+ @abstract disabble connect sound
+ @param delegate IN:(id<FTaR530Delegate>)
+ */
+- (void)disabbleConnectSound:(id<FTaR530Delegate>)delegate;
 //---------------------------newly added methods end-------------------------------
 
 //----------------------------aR530 CardReader Methods------------------------------

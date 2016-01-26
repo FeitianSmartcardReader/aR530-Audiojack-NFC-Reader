@@ -28,21 +28,21 @@
 		89CC20D51A4975A5004944F3 /* Warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 89CC20D41A4975A5004944F3 /* Warning.png */; };
 		89CEED4E1A5FCC2E00906286 /* ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CEED4D1A5FCC2E00906286 /* ipad.storyboard */; };
 		89DCD0A91A4A9E6E009AF1CF /* blackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 89DCD0A81A4A9E6E009AF1CF /* blackground.png */; };
-		B50D04141BB3FC0200B1EDB3 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04081BB3FC0200B1EDB3 /* Icon-Small-50.png */; settings = {ASSET_TAGS = (); }; };
-		B50D04151BB3FC0200B1EDB3 /* 152.Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04091BB3FC0200B1EDB3 /* 152.Icon-76@2x.png */; settings = {ASSET_TAGS = (); }; };
-		B50D04161BB3FC0200B1EDB3 /* 1024.1024.iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040A1BB3FC0200B1EDB3 /* 1024.1024.iTunesArtwork@2x.png */; settings = {ASSET_TAGS = (); }; };
-		B50D04171BB3FC0200B1EDB3 /* 512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040B1BB3FC0200B1EDB3 /* 512x512.png */; settings = {ASSET_TAGS = (); }; };
-		B50D04181BB3FC0200B1EDB3 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040C1BB3FC0200B1EDB3 /* Icon-Small@2x.png */; settings = {ASSET_TAGS = (); }; };
-		B50D04191BB3FC0200B1EDB3 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040D1BB3FC0200B1EDB3 /* Icon-Small.png */; settings = {ASSET_TAGS = (); }; };
-		B50D041A1BB3FC0300B1EDB3 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040E1BB3FC0200B1EDB3 /* Icon-76.png */; settings = {ASSET_TAGS = (); }; };
-		B50D041B1BB3FC0300B1EDB3 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040F1BB3FC0200B1EDB3 /* Icon-60@3x.png */; settings = {ASSET_TAGS = (); }; };
-		B50D041C1BB3FC0300B1EDB3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04101BB3FC0200B1EDB3 /* Icon-72.png */; settings = {ASSET_TAGS = (); }; };
-		B50D041D1BB3FC0300B1EDB3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04111BB3FC0200B1EDB3 /* Icon@2x.png */; settings = {ASSET_TAGS = (); }; };
-		B50D041E1BB3FC0300B1EDB3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04121BB3FC0200B1EDB3 /* Icon.png */; settings = {ASSET_TAGS = (); }; };
-		B50D041F1BB3FC0300B1EDB3 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04131BB3FC0200B1EDB3 /* Icon-60@2x.png */; settings = {ASSET_TAGS = (); }; };
+		B50D04141BB3FC0200B1EDB3 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04081BB3FC0200B1EDB3 /* Icon-Small-50.png */; };
+		B50D04151BB3FC0200B1EDB3 /* 152.Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04091BB3FC0200B1EDB3 /* 152.Icon-76@2x.png */; };
+		B50D04161BB3FC0200B1EDB3 /* 1024.1024.iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040A1BB3FC0200B1EDB3 /* 1024.1024.iTunesArtwork@2x.png */; };
+		B50D04171BB3FC0200B1EDB3 /* 512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040B1BB3FC0200B1EDB3 /* 512x512.png */; };
+		B50D04181BB3FC0200B1EDB3 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040C1BB3FC0200B1EDB3 /* Icon-Small@2x.png */; };
+		B50D04191BB3FC0200B1EDB3 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040D1BB3FC0200B1EDB3 /* Icon-Small.png */; };
+		B50D041A1BB3FC0300B1EDB3 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040E1BB3FC0200B1EDB3 /* Icon-76.png */; };
+		B50D041B1BB3FC0300B1EDB3 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D040F1BB3FC0200B1EDB3 /* Icon-60@3x.png */; };
+		B50D041C1BB3FC0300B1EDB3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04101BB3FC0200B1EDB3 /* Icon-72.png */; };
+		B50D041D1BB3FC0300B1EDB3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04111BB3FC0200B1EDB3 /* Icon@2x.png */; };
+		B50D041E1BB3FC0300B1EDB3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04121BB3FC0200B1EDB3 /* Icon.png */; };
+		B50D041F1BB3FC0300B1EDB3 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04131BB3FC0200B1EDB3 /* Icon-60@2x.png */; };
 		B50D04211BB3FC3200B1EDB3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50D04201BB3FC3200B1EDB3 /* ExternalAccessory.framework */; };
-		B50D04231BB3FE2500B1EDB3 /* libFTaR530_all.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B50D04221BB3FE2500B1EDB3 /* libFTaR530_all.a */; settings = {ASSET_TAGS = (); }; };
-		B50D04251BB402BF00B1EDB3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04241BB402BF00B1EDB3 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
+		B50D04251BB402BF00B1EDB3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04241BB402BF00B1EDB3 /* Default-568h@2x.png */; };
+		B512B3A61C577F59005C42BC /* FTaR530_all.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B512B3A51C577F59005C42BC /* FTaR530_all.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,8 +96,8 @@
 		B50D04121BB3FC0200B1EDB3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B50D04131BB3FC0200B1EDB3 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		B50D04201BB3FC3200B1EDB3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
-		B50D04221BB3FE2500B1EDB3 /* libFTaR530_all.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFTaR530_all.a; path = ../LIB/libFTaR530_all.a; sourceTree = "<group>"; };
 		B50D04241BB402BF00B1EDB3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B512B3A51C577F59005C42BC /* FTaR530_all.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = FTaR530_all.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +106,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50D04211BB3FC3200B1EDB3 /* ExternalAccessory.framework in Frameworks */,
+				B512B3A61C577F59005C42BC /* FTaR530_all.a in Frameworks */,
 				898E35741A5A71E6006AE9DD /* AVFoundation.framework in Frameworks */,
 				898E355C1A5A6BE0006AE9DD /* UIKit.framework in Frameworks */,
 				898E355A1A5A6BD6006AE9DD /* CoreGraphics.framework in Frameworks */,
 				898E35581A5A6BC6006AE9DD /* Foundation.framework in Frameworks */,
-				B50D04231BB3FE2500B1EDB3 /* libFTaR530_all.a in Frameworks */,
 				898E35501A5A6B8B006AE9DD /* AudioToolbox.framework in Frameworks */,
 				898E354E1A5A6B7E006AE9DD /* MediaPlayer.framework in Frameworks */,
 			);
@@ -133,8 +133,8 @@
 		89773C2D1A5E656C005B9B45 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				B512B3A51C577F59005C42BC /* FTaR530_all.a */,
 				B50D04201BB3FC3200B1EDB3 /* ExternalAccessory.framework */,
-				B50D04221BB3FE2500B1EDB3 /* libFTaR530_all.a */,
 				898E35731A5A71E6006AE9DD /* AVFoundation.framework */,
 				898E355B1A5A6BE0006AE9DD /* UIKit.framework */,
 				898E35591A5A6BD6006AE9DD /* CoreGraphics.framework */,
@@ -280,7 +280,6 @@
 				TargetAttributes = {
 					89CC209A1A496AAC004944F3 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = S47T4UESP3;
 						SystemCapabilities = {
 							com.apple.WAC = {
 								enabled = 0;
@@ -457,13 +456,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = com.ftsafe.aR530.demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "/Users/ben/Documents/github/aR530-Audiojack-NFC-Reader/aR530_SDK_V1.4_Latest/iOS/LIB/";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftsafe.aR520;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
 				PRODUCT_NAME = aR530;
@@ -478,13 +478,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = com.ftsafe.aR530.demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "/Users/ben/Documents/github/aR530-Audiojack-NFC-Reader/aR530_SDK_V1.4_Latest/iOS/LIB/";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/com.ftsafe.aR530.demo",
+					"$(PROJECT_DIR)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftsafe.aR520;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
