@@ -133,9 +133,31 @@
         
     </LinearLayout>
     
-    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
 
+        <Button
+            android:id="@+id/btn_trun_off_autobuzzer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:text=" TurnOff AutoBuzzer" />
+        
+         <Button
+            android:id="@+id/btn_buzzer_beep"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:text="Buzzer Beep" />
+        
+    </LinearLayout>
     
+        
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="1dp"

@@ -47,6 +47,8 @@ public class MainActivity extends Activity implements OnClickListener,
 	private Button btnGetDeviceID;
 	private Button btnGetDevUID;
 	private Button btnGetFirmwareVersion;
+	private Button btnTurnOffAutoBuzzer;
+	private Button btnBuzzerBeep;
 	private Button btnConnect;
 	private Button btnDisconnect;
 	private Button btnSendApdu;
@@ -132,6 +134,8 @@ public class MainActivity extends Activity implements OnClickListener,
 		btnGetDeviceID = (Button) findViewById(R.id.btn_get_device_id);
 		btnGetDevUID = (Button) findViewById(R.id.btn_get_UID);
 		btnGetFirmwareVersion = (Button) findViewById(R.id.btn_get_firmware_version);
+		btnTurnOffAutoBuzzer = (Button) findViewById(R.id.btn_trun_off_autobuzzer);
+		btnBuzzerBeep = (Button) findViewById(R.id.btn_buzzer_beep);
 		btnConnect = (Button) findViewById(R.id.btn_nfc_connect);
 		btnDisconnect = (Button) findViewById(R.id.btn_nfc_disconnect);
 		btnSendApdu = (Button) findViewById(R.id.btn_send);
@@ -159,6 +163,8 @@ public class MainActivity extends Activity implements OnClickListener,
 		btnGetDeviceID.setOnClickListener(this);
 		btnGetDevUID.setOnClickListener(this);
 		btnGetFirmwareVersion.setOnClickListener(this);
+		btnTurnOffAutoBuzzer.setOnClickListener(this);
+		btnBuzzerBeep.setOnClickListener(this);
 		btnConnect.setOnClickListener(this);
 		btnDisconnect.setOnClickListener(this);
 		btnSendApdu.setOnClickListener(this);
@@ -174,6 +180,10 @@ public class MainActivity extends Activity implements OnClickListener,
 			new GetDevUIDTask().execute();
 		} else if (view == btnGetFirmwareVersion) {
 			new GetFirmwareVersionTask().execute();
+		} else if (view == btnTurnOffAutoBuzzer) {
+			new TurnOffAutoBuzzer().execute();
+		} else if (view == btnBuzzerBeep) {
+			new BuzzerBeep().execute();
 		} else if (view == btnConnect) {
 			new ConnectTask().execute();
 		} else if (view == btnDisconnect) {
@@ -290,7 +300,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * Get Device ID
+	 * 获取设备ID
 	 */
 	class GetDeviceIDTask extends AsyncTask<Void, Void, String> {
 
@@ -311,7 +321,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 	
 	/**
-	 * Get reader UID(user ID)
+	 * 获取设备UID
 	 */
 	class GetDevUIDTask extends AsyncTask<Void, Void, String> {
 
@@ -332,7 +342,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * Get firmware version
+	 * 获取固件版本号
 	 */
 	class GetFirmwareVersionTask extends AsyncTask<Void, Void, String> {
 
@@ -351,9 +361,61 @@ public class MainActivity extends Activity implements OnClickListener,
 		}
 
 	}
+	
+	/**
+	 * 关闭蜂鸣器自动响应
+	 */
+	class TurnOffAutoBuzzer extends AsyncTask<Void, Void, String> {
+
+		protected void onPreExecute() {
+			pdlg.show();
+		}
+
+		protected String doInBackground(Void... params) {
+			if ( myCard.TrunOffAutoBuzzer() == 0)
+			{
+				return "Trun off automatic buzzer successed !";
+			}
+			return "Trun off automatic buzzer failed !";
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			pdlg.hide();
+			adlg.setMessage(result);
+			adlg.show();
+		}
+
+	}
+	
+	/**
+	 * 控制蜂鸣器发声
+	 */
+	class BuzzerBeep extends AsyncTask<Void, Void, String> {
+
+		protected void onPreExecute() {
+			pdlg.show();
+		}
+
+		protected String doInBackground(Void... params) {
+			if ( myCard.BuzzerBeep() == 0)
+			{
+				return "buzzer beep successed !";
+			}
+			return "buzzer beep failed !";
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			pdlg.hide();
+			adlg.setMessage(result);
+			adlg.show();
+		}
+
+	}
 
 	/**
-	 * Searching card
+	 * 寻卡
 	 */
 	class ConnectTask extends AsyncTask<Void, Void, Integer> {
 
@@ -490,7 +552,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * Disconnect 
+	 * 断开连接
 	 */
 	class DisconnectTask extends AsyncTask<Void, Void, String> {
 

@@ -1,3 +1,5 @@
+2016/03/04
+	Update Android SDK, add API control buzzer, and please notice, only 1.32 firmware can support buzzer control, for firmware please contact FEITIAN to get, mail send to ben@ftsafe.com
 2016/01/26
 	Update iOS SDK, Add API control buzzer
 2015/5/8
