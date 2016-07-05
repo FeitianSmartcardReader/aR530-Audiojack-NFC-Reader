@@ -1,3 +1,6 @@
+2016/07/05
+	Add new firmware which support transparent transfer APDU to reader directly
+	Update iOS SDK
 2016/03/04
 	Update Android SDK, add API control buzzer, and please notice, only 1.32 firmware can support buzzer control, for firmware please contact FEITIAN to get, mail send to ben@ftsafe.com
 2016/01/26

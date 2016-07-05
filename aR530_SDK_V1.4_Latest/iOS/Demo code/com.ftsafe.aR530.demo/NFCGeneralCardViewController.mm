@@ -101,6 +101,47 @@ extern nfc_card_t NFC_Card;
         }];
     });
 }
+- (IBAction)OnCusTransmit:(UIButton *)sender {
+    NSString *apduText = self.txtTransmitInput.text;
+    
+    int nPos = 0;
+    char apduStr[1024] = {0} ;
+    char IDm[16 + 1] = {0};
+    const char * ptmpStr = [apduText UTF8String];
+    unsigned char apduBuf[100] = {0};
+    unsigned int apduLen = 0;
+    
+    if(apduText == nil || [apduText isEqualToString:@""] ){
+        [self showMsg:@"APDU is error!" returnAfterShow:NO];
+        return;
+    }
+    
+    if(self.cardType == CARD_TYPE_C){
+        memcpy(apduStr + nPos, ptmpStr, 2) ;
+        nPos += 2 ;
+        
+        HexToStr(IDm, NFC_Card->IDm, 8);
+        memcpy(apduStr + nPos, IDm, 16) ;
+        nPos += 16 ;
+        
+        memcpy(apduStr + nPos, ptmpStr+2 , [apduText length] - 2) ;
+        nPos += [apduText length] - 2 ;
+        
+        apduLen = nPos / 2;
+        
+    }
+    else{
+        memcpy(apduStr, ptmpStr, [apduText length]) ;
+        apduLen = (unsigned int)[apduText length] / 2;
+    }
+    
+    StrToHex(apduBuf, (char *)apduStr, (unsigned int)apduLen);
+    
+    NSString *sendLog = [NSString stringWithFormat:@"send:\n%s", ptmpStr];
+    self.TransmitTextView.text = sendLog;
+    
+    [_ar530 NFC_Card_No_Head_Transmit:NFC_Card sendBuf:apduBuf sendLen:apduLen delegate:self];
+}
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.txtTransmitInput resignFirstResponder];
