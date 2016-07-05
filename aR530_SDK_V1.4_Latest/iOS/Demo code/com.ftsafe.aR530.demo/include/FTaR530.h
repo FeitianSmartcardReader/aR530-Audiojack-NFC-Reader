@@ -120,6 +120,15 @@
 
 - (void)NFC_Card_Transmit:(nfc_card_t)card sendBuf:(unsigned char *)sendBuf sendLen:(unsigned int)sendLen delegate:(id<FTaR530Delegate>)delegate;
 
+/*@Name:        +(void)NFC_CArd_No_Head_Transmit:(nfc_card_t)card sendBuf:(unsigned char *)sendBuf sendLen:(unsigned int)sendLen delegate:(id<FTaR530Delegate>)delegate;
+ *@Function:    Transmit APDU to Smart Card
+ *@Parameter:   IN: (1).nfc_card_t card: The pointer of smart card handle
+ *                  (2).(unsigned char *)sendBuf: Send buffer
+ *                  (3).(unsigned int)sendLen: Send buffer length
+ *                  (4).(id<FTaR530Delegate>)delegate
+ */
+
+- (void)NFC_Card_No_Head_Transmit:(nfc_card_t)card sendBuf:(unsigned char *)sendBuf sendLen:(unsigned int)sendLen delegate:(id<FTaR530Delegate>)delegate;
 //--------------------------aR530 CardReader Methods end----------------------------
 
 
