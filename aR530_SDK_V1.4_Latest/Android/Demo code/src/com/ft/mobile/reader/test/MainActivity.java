@@ -54,6 +54,9 @@ public class MainActivity extends Activity implements OnClickListener,
 	private Button btnSendApdu;
 	private Spinner spiApdu;
 	private EditText etInputApdu;
+	private Button customSendApdu;
+	private Spinner customspiApdu;
+	private EditText customInputApdu;
 
 	private ArrayList<String> mApduList;
 	private ArrayAdapter<String> arrAdpter;
@@ -95,10 +98,13 @@ public class MainActivity extends Activity implements OnClickListener,
 	"00A4000002A001",
 	"00e4020002B001",
 	"00A40000023F00",
-	"00e4010002a001"
+	"00e4010002a001",
+	"000005FFB0000410",
+	"000005FFCA000000",
+	"000005FFCA000000"
 	};
 //	private String[] mApdus = { "00a404000a01020304050607080900", "8010010200" };
-	private static String[] mFelicaApdus = { "06010901018000" };
+	private static String[] mFelicaApdus = { "06010901018000" ,"00000f06012e3d14490e2560010901018000"};
 
 	public static Card myCard;
 
@@ -140,6 +146,8 @@ public class MainActivity extends Activity implements OnClickListener,
 		btnDisconnect = (Button) findViewById(R.id.btn_nfc_disconnect);
 		btnSendApdu = (Button) findViewById(R.id.btn_send);
 		etInputApdu = (EditText) findViewById(R.id.et_send_apdu);
+		customSendApdu = (Button) findViewById(R.id.custom_send);
+		customInputApdu = (EditText) findViewById(R.id.custom_send_apdu);
 		tvConnectState.setText("not connected.");
 
 		mApduList = new ArrayList<String>();
@@ -152,6 +160,10 @@ public class MainActivity extends Activity implements OnClickListener,
 		spiApdu = (Spinner) findViewById(R.id.spi_apdu);
 		spiApdu.setAdapter(arrAdpter);
 		spiApdu.setOnItemSelectedListener(this);
+		
+		customspiApdu = (Spinner) findViewById(R.id.custom_spi_apdu);
+		customspiApdu.setAdapter(arrAdpter);
+		customspiApdu.setOnItemSelectedListener(this);
 
 		pdlg = new ProgressDialog(this);
 		pdlg.setMessage("Waiting");
@@ -168,6 +180,7 @@ public class MainActivity extends Activity implements OnClickListener,
 		btnConnect.setOnClickListener(this);
 		btnDisconnect.setOnClickListener(this);
 		btnSendApdu.setOnClickListener(this);
+		customSendApdu.setOnClickListener(this);
 	}
 
 	public void onClick(View view) {
@@ -180,7 +193,7 @@ public class MainActivity extends Activity implements OnClickListener,
 			new GetDevUIDTask().execute();
 		} else if (view == btnGetFirmwareVersion) {
 			new GetFirmwareVersionTask().execute();
-		} else if (view == btnTurnOffAutoBuzzer) {
+			} else if (view == btnTurnOffAutoBuzzer) {
 			new TurnOffAutoBuzzer().execute();
 		} else if (view == btnBuzzerBeep) {
 			new BuzzerBeep().execute();
@@ -193,6 +206,11 @@ public class MainActivity extends Activity implements OnClickListener,
 			Log.i("PKCS", "APDU:" + str);
 			byte[] sendData = Convert.hexStringTo16(str);
 			new TransmitTask().execute(sendData);
+		} else if (view == customSendApdu) {
+			 String str = customInputApdu.getText().toString().trim();
+			 Log.i("PKCS", "customAPDU:" + str);
+			 byte[] sendData = Convert.hexStringTo16(str);
+			 new TransmitTaskcustom().execute(sendData);
 		}
 
 	}
@@ -206,6 +224,23 @@ public class MainActivity extends Activity implements OnClickListener,
 		try {
 			if (isInit) {
 				etInputApdu.setText(spiApdu.getSelectedItem().toString());
+			} else {
+				isInit = true;
+			}
+		} catch (Exception ex) {
+
+		}
+	}
+	
+	public void setcustomSpinner() {
+		mApduList.clear();
+		for (String s : mApdus) {
+			mApduList.add(s);
+		}
+		arrAdpter.notifyDataSetChanged();
+		try {
+			if (isInit) {
+				customInputApdu.setText(customspiApdu.getSelectedItem().toString());
 			} else {
 				isInit = true;
 			}
@@ -230,11 +265,34 @@ public class MainActivity extends Activity implements OnClickListener,
 
 		}
 	}
+	
+	public void setcustomFelicaSpinner() {
+		mApduList.clear();
+		for (String s : mFelicaApdus) {
+			mApduList.add(s);
+		}
+		arrAdpter.notifyDataSetChanged();
+		try {
+			if (isInit) {
+				customInputApdu.setText(customspiApdu.getSelectedItem().toString());
+			} else {
+				isInit = true;
+			}
+		} catch (Exception ex) {
+
+		}
+	}
 
 	public void clearSpinner() {
 		mApduList.clear();
 		arrAdpter.notifyDataSetChanged();
 		etInputApdu.setText("");
+	}
+	
+	public void clearcustomSpinner() {
+		mApduList.clear();
+		arrAdpter.notifyDataSetChanged();
+		customInputApdu.setText("");
 	}
 	
 	public String errContent(int errCode) {
@@ -300,7 +358,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * 获取设备ID
+	 * Get Device ID
 	 */
 	class GetDeviceIDTask extends AsyncTask<Void, Void, String> {
 
@@ -321,7 +379,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 	
 	/**
-	 * 获取设备UID
+	 * Get Device UID(User ID)
 	 */
 	class GetDevUIDTask extends AsyncTask<Void, Void, String> {
 
@@ -342,7 +400,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * 获取固件版本号
+	 * Get firmware version
 	 */
 	class GetFirmwareVersionTask extends AsyncTask<Void, Void, String> {
 
@@ -361,9 +419,175 @@ public class MainActivity extends Activity implements OnClickListener,
 		}
 
 	}
+@@ -54,6 +54,9 @@ public class MainActivity extends Activity implements OnClickListener,
+	private Button btnSendApdu;
+	private Spinner spiApdu;
+	private EditText etInputApdu;
+	private Button customSendApdu;
+	private Spinner customspiApdu;
+	private EditText customInputApdu;
+
+	private ArrayList<String> mApduList;
+	private ArrayAdapter<String> arrAdpter;
+@@ -95,10 +98,13 @@ public class MainActivity extends Activity implements OnClickListener,
+	"00A4000002A001",
+	"00e4020002B001",
+	"00A40000023F00",
+	"00e4010002a001"
+	"00e4010002a001",
+	"000005FFB0000410",
+	"000005FFCA000000",
+	"000005FFCA000000"
+	};
+//	private String[] mApdus = { "00a404000a01020304050607080900", "8010010200" };
+	private static String[] mFelicaApdus = { "06010901018000" };
+	private static String[] mFelicaApdus = { "06010901018000" ,"00000f06012e3d14490e2560010901018000"};
+
+	public static Card myCard;
+
+@@ -140,6 +146,8 @@ public class MainActivity extends Activity implements OnClickListener,
+		btnDisconnect = (Button) findViewById(R.id.btn_nfc_disconnect);
+		btnSendApdu = (Button) findViewById(R.id.btn_send);
+		etInputApdu = (EditText) findViewById(R.id.et_send_apdu);
+		customSendApdu = (Button) findViewById(R.id.custom_send);
+		customInputApdu = (EditText) findViewById(R.id.custom_send_apdu);
+		tvConnectState.setText("not connected.");
+
+		mApduList = new ArrayList<String>();
+@@ -152,6 +160,10 @@ public class MainActivity extends Activity implements OnClickListener,
+		spiApdu = (Spinner) findViewById(R.id.spi_apdu);
+		spiApdu.setAdapter(arrAdpter);
+		spiApdu.setOnItemSelectedListener(this);
+		
+		customspiApdu = (Spinner) findViewById(R.id.custom_spi_apdu);
+		customspiApdu.setAdapter(arrAdpter);
+		customspiApdu.setOnItemSelectedListener(this);
+
+		pdlg = new ProgressDialog(this);
+		pdlg.setMessage("Waiting");
+@@ -168,6 +180,7 @@ public class MainActivity extends Activity implements OnClickListener,
+		btnConnect.setOnClickListener(this);
+		btnDisconnect.setOnClickListener(this);
+		btnSendApdu.setOnClickListener(this);
+		customSendApdu.setOnClickListener(this);
+	}
+
+	public void onClick(View view) {
+@@ -180,7 +193,7 @@ public class MainActivity extends Activity implements OnClickListener,
+			new GetDevUIDTask().execute();
+		} else if (view == btnGetFirmwareVersion) {
+			new GetFirmwareVersionTask().execute();
+		} else if (view == btnTurnOffAutoBuzzer) {
+			} else if (view == btnTurnOffAutoBuzzer) {
+			new TurnOffAutoBuzzer().execute();
+		} else if (view == btnBuzzerBeep) {
+			new BuzzerBeep().execute();
+@@ -193,6 +206,11 @@ public class MainActivity extends Activity implements OnClickListener,
+			Log.i("PKCS", "APDU:" + str);
+			byte[] sendData = Convert.hexStringTo16(str);
+			new TransmitTask().execute(sendData);
+		} else if (view == customSendApdu) {
+			 String str = customInputApdu.getText().toString().trim();
+			 Log.i("PKCS", "customAPDU:" + str);
+			 byte[] sendData = Convert.hexStringTo16(str);
+			 new TransmitTaskcustom().execute(sendData);
+		}
+
+	}
+@@ -213,6 +231,23 @@ public class MainActivity extends Activity implements OnClickListener,
+
+		}
+	}
+	
+	public void setcustomSpinner() {
+		mApduList.clear();
+		for (String s : mApdus) {
+			mApduList.add(s);
+		}
+		arrAdpter.notifyDataSetChanged();
+		try {
+			if (isInit) {
+				customInputApdu.setText(customspiApdu.getSelectedItem().toString());
+			} else {
+				isInit = true;
+			}
+		} catch (Exception ex) {
+
+		}
+	}
+
+	public void setFelicaSpinner() {
+		mApduList.clear();
+@@ -230,6 +265,23 @@ public class MainActivity extends Activity implements OnClickListener,
+
+		}
+	}
+	
+	public void setcustomFelicaSpinner() {
+		mApduList.clear();
+		for (String s : mFelicaApdus) {
+			mApduList.add(s);
+		}
+		arrAdpter.notifyDataSetChanged();
+		try {
+			if (isInit) {
+				customInputApdu.setText(customspiApdu.getSelectedItem().toString());
+			} else {
+				isInit = true;
+			}
+		} catch (Exception ex) {
+
+		}
+	}
+
+	public void clearSpinner() {
+		mApduList.clear();
+@@ -237,6 +289,12 @@ public class MainActivity extends Activity implements OnClickListener,
+		etInputApdu.setText("");
+	}
+	
+	public void clearcustomSpinner() {
+		mApduList.clear();
+		arrAdpter.notifyDataSetChanged();
+		customInputApdu.setText("");
+	}
+	
+	public String errContent(int errCode) {
+		switch (errCode) {
+		case Card.CODE_FAIL:
+@@ -300,7 +358,7 @@ public class MainActivity extends Activity implements OnClickListener,
+	}
+
+	/**
+	 * 锟斤拷取锟借备ID
+	 * Get Device ID
+	 */
+	class GetDeviceIDTask extends AsyncTask<Void, Void, String> {
+
+@@ -321,7 +379,7 @@ public class MainActivity extends Activity implements OnClickListener,
+	}
 	
 	/**
-	 * 关闭蜂鸣器自动响应
+	 * 锟斤拷取锟借备UID
+	 * Get Device UID(User ID)
+	 */
+	class GetDevUIDTask extends AsyncTask<Void, Void, String> {
+
+@@ -342,7 +400,7 @@ public class MainActivity extends Activity implements OnClickListener,
+	}
+
+	/**
+	 * Get firmware version
+	 */
+	class GetFirmwareVersionTask extends AsyncTask<Void, Void, String> {
+
+@@ -361,61 +419,9 @@ public class MainActivity extends Activity implements OnClickListener,
+		}
+
+	}
+	
+	/**
+	 * Turn off buzzer
 	 */
 	class TurnOffAutoBuzzer extends AsyncTask<Void, Void, String> {
 
@@ -389,7 +613,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 	
 	/**
-	 * 控制蜂鸣器发声
+	 * Open buzzer
 	 */
 	class BuzzerBeep extends AsyncTask<Void, Void, String> {
 
@@ -413,9 +637,8 @@ public class MainActivity extends Activity implements OnClickListener,
 		}
 
 	}
-
 	/**
-	 * 寻卡
+	 * Searching card
 	 */
 	class ConnectTask extends AsyncTask<Void, Void, Integer> {
 
@@ -552,7 +775,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/**
-	 * 断开连接
+	 * Disconnect 
 	 */
 	class DisconnectTask extends AsyncTask<Void, Void, String> {
 
@@ -606,6 +829,29 @@ public class MainActivity extends Activity implements OnClickListener,
 			adlg.show();
 		}
 	}
+	
+	class TransmitTaskcustom extends AsyncTask<byte[], Void, String> {
+
+		@Override
+		protected void onPreExecute() {
+			pdlg.show();
+		}
+
+		@Override
+		protected String doInBackground(byte[]... sendData) {
+			byte respData[] = new byte[1024];
+			int recvLen = myCard.FTNFC_transmitcustomCmd(sendData[0],  respData);
+			return "Response:\n" + Convection.Bytes2HexString(respData, recvLen);
+			
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			pdlg.hide();
+			adlg.setMessage(result);
+			adlg.show();
+		}
+	}
 
 	private BroadcastReceiver receiver = new BroadcastReceiver() {
 		public void onReceive(Context context, Intent intent) {
@@ -637,6 +883,10 @@ public class MainActivity extends Activity implements OnClickListener,
 			long l) {
 		if (adapterview == spiApdu) {
 			etInputApdu.setText(spiApdu.getSelectedItem().toString());
+		}
+		
+		else if (adapterview == customspiApdu) {
+			customInputApdu.setText(customspiApdu.getSelectedItem().toString());
 		}
 	}
 
