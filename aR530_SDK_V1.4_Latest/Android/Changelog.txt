@@ -1,3 +1,9 @@
+2016/07/15
+	Update Android SDK, add FTNFC_transmitcustomCmd API into SDK, the API allow user send command to reader directly. The format is below:
+	NAD+PCB+APDU's LENGTH+APDU
+	For example, send get random number, it should be like below:
+	NAD+PCB+APDU's LENGTH+APDU
+	00+00+05+0084000008
 2016/03/04
 	Update reader firmware, add control buzzer function into SDK
 2015/05/08
