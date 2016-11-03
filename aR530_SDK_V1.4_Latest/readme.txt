@@ -1,3 +1,5 @@
+2016/11/03
+	Update android SDK
 2016/07/05
 	Add new firmware which support transparent transfer APDU to reader directly
 	Update iOS SDK
