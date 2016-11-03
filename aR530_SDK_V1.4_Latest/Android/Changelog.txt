@@ -1,3 +1,7 @@
+2016/11/03
+	Check the lib and found missing buzzer API, just modify the latest lib and add buzzer API in
+2016/10/27
+	Update android lib, upload wrong lib in android SDK. Very sorry about this.
 2016/07/15
 	Update Android SDK, add FTNFC_transmitcustomCmd API into SDK, the API allow user send command to reader directly. The format is below:
 	NAD+PCB+APDU's LENGTH+APDU
