@@ -1,9 +1,19 @@
+Firmware update history:
 1.34
 	1. Add a API allow user send command to reader directly, for example, get UID, user need send FFCA000000 through NFC_Card_No_Head_Transmit API. 
 	   For example: Send get random number, it should be like below(NAD and PCB please keep 0x00):
 	          NAD+PCB+APDU's LENGTH+APDU
                   00+00+05+0084000008
         2. Add get all contactless CPU card UID using FFCA000000 command
+1.33
+	Beta version for FFCA000000 command support
+1.32
+	Ultralight card issue when opeartion block
+	Add beeper function
+1.31
+	First version publish at 2015/12/18
+
+Update tool history:
 1.3.0
 	Add windows 10 support	
 1.2.1
