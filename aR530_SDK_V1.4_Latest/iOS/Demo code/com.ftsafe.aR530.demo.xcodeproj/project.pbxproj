@@ -42,7 +42,7 @@
 		B50D041F1BB3FC0300B1EDB3 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04131BB3FC0200B1EDB3 /* Icon-60@2x.png */; };
 		B50D04211BB3FC3200B1EDB3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50D04201BB3FC3200B1EDB3 /* ExternalAccessory.framework */; };
 		B50D04251BB402BF00B1EDB3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B50D04241BB402BF00B1EDB3 /* Default-568h@2x.png */; };
-		B512B3A61C577F59005C42BC /* FTaR530_all.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B512B3A51C577F59005C42BC /* FTaR530_all.a */; };
+		B56934F51DE2EC2100A0B005 /* libFTaR530_all.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B56934F41DE2EC2100A0B005 /* libFTaR530_all.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,7 +97,7 @@
 		B50D04131BB3FC0200B1EDB3 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		B50D04201BB3FC3200B1EDB3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		B50D04241BB402BF00B1EDB3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		B512B3A51C577F59005C42BC /* FTaR530_all.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = FTaR530_all.a; sourceTree = "<group>"; };
+		B56934F41DE2EC2100A0B005 /* libFTaR530_all.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFTaR530_all.a; path = ../LIB/libFTaR530_all.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +106,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50D04211BB3FC3200B1EDB3 /* ExternalAccessory.framework in Frameworks */,
-				B512B3A61C577F59005C42BC /* FTaR530_all.a in Frameworks */,
 				898E35741A5A71E6006AE9DD /* AVFoundation.framework in Frameworks */,
 				898E355C1A5A6BE0006AE9DD /* UIKit.framework in Frameworks */,
+				B56934F51DE2EC2100A0B005 /* libFTaR530_all.a in Frameworks */,
 				898E355A1A5A6BD6006AE9DD /* CoreGraphics.framework in Frameworks */,
 				898E35581A5A6BC6006AE9DD /* Foundation.framework in Frameworks */,
 				898E35501A5A6B8B006AE9DD /* AudioToolbox.framework in Frameworks */,
@@ -133,7 +133,7 @@
 		89773C2D1A5E656C005B9B45 /* framework */ = {
 			isa = PBXGroup;
 			children = (
-				B512B3A51C577F59005C42BC /* FTaR530_all.a */,
+				B56934F41DE2EC2100A0B005 /* libFTaR530_all.a */,
 				B50D04201BB3FC3200B1EDB3 /* ExternalAccessory.framework */,
 				898E35731A5A71E6006AE9DD /* AVFoundation.framework */,
 				898E355B1A5A6BE0006AE9DD /* UIKit.framework */,
@@ -275,11 +275,13 @@
 		89CC20931A496AAC004944F3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "李亚林";
 				TargetAttributes = {
 					89CC209A1A496AAC004944F3 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = PL9NCP8CG6;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.WAC = {
 								enabled = 0;
@@ -379,8 +381,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -390,6 +394,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -425,8 +430,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -435,6 +442,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -455,16 +463,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PL9NCP8CG6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = com.ftsafe.aR530.demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
-				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ftsafe.aR520;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../LIB/\"";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(SRCROOT)/../LIB/\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ftsafe.aR530.demo;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
 				PRODUCT_NAME = aR530;
 				PROVISIONING_PROFILE = "";
@@ -477,20 +486,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PL9NCP8CG6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = com.ftsafe.aR530.demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/com.ftsafe.aR530.demo",
-					"$(PROJECT_DIR)",
-				);
-				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../LIB/\"";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(SRCROOT)/../LIB/\"";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ftsafe.aR520;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ftsafe.aR530.demo;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
 				PRODUCT_NAME = aR530;
 				PROVISIONING_PROFILE = "";

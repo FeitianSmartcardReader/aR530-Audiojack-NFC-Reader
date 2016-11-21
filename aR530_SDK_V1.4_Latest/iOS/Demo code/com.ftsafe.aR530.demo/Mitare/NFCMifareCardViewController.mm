@@ -88,7 +88,7 @@ extern nfc_card_t NFC_Card;
         return ;
     }
 
-    StrToHex(authenKey, (char *)key_str, strlen(key_str)/2);
+    StrToHex(authenKey, (char *)key_str, (unsigned int)strlen(key_str)/2);
     
     [_ar530 Mifare_GeneralAuthenticate:NFC_Card blockNum:blocksNo keyType:keyType key:authenKey delegate:self];
     
